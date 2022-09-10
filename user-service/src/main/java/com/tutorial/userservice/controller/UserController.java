@@ -48,7 +48,7 @@ public class UserController {
         }
 
         List<Car> cars = userService.getCars(userId);
-        if(cars.isEmpty()){
+        if(cars == null){
             return ResponseEntity.noContent().build();
         }
 
