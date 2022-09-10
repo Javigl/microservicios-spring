@@ -64,7 +64,7 @@ public class UserController {
         }
 
         List<Bike> bikes = userService.getBikes(userId);
-        if(bikes.isEmpty()){
+        if(bikes == null){
             return ResponseEntity.noContent().build();
         }
 
