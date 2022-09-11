@@ -38,7 +38,7 @@ public class UserController {
 
         return ResponseEntity.ok(user);
     }
-
+    @CircuitBreaker(name = "carsCB", fallbackMethod = "fallbackGetCars")
     @GetMapping("/cars/{userId}")
     public ResponseEntity<List<Car>> getCars(@PathVariable("userId") int userId){
         User user = userService.getUserById(userId);
